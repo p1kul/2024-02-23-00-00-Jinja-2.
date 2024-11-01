@@ -12,7 +12,7 @@ class User(BaseModel):
     username: str
     age: int
 
-@app.get('/')
+@app.get("/")
 async def get_all(request: Request) -> HTMLResponse:
     return templates.TemplateResponse("users.html",{"request":request, "users":users})
 
