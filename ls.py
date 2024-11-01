@@ -18,7 +18,7 @@ async def get_all(request: Request) -> HTMLResponse:
 
 @app.get(path="/users/{user_id}")
 async def all_inf(request: Request, user_id: int) -> HTMLResponse:
-    return templates.TemplateResponse("users.html",{"request":request, "user":users[user_id]})
+    return templates.TemplateResponse("users.html",{"request":request, "user":users[user_id - 1]})
 
 @app.post("/user/{username}/{age}")
 async def create_message(user: User):
